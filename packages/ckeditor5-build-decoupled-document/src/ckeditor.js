@@ -38,6 +38,7 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import CustomEmoticon from './custom-emoticon/customEmoticon';
 
 export default class DecoupledEditor extends DecoupledEditorBase {}
 
@@ -74,13 +75,15 @@ DecoupledEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	CustomEmoticon,
 ];
 
 // Editor configuration.
 DecoupledEditor.defaultConfig = {
 	toolbar: {
 		items: [
+			'customEmoticon',
 			'heading',
 			'|',
 			'fontfamily',
@@ -133,5 +136,5 @@ DecoupledEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'ko'
 };
